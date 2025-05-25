@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
+const path = require('path'); // Import path module
 
 // Load environment variables
 dotenv.config();
@@ -33,6 +34,18 @@ app.get('/', (req, res) => {
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/friends', require('./routes/friendRoutes'));
 // app.use('/api/quizzes', require('./routes/quizRoutes'));
+
+// Serve frontend in production
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    // Assumes your frontend build output is in a 'dist' folder in the root of the project
+    app.use(express.static(path.join(__dirname, '../dist')));
+
+    // Serve index.html for all other routes
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../dist', 'index.html'));
+    });
+}
 
 const PORT = process.env.PORT || 5000;
 

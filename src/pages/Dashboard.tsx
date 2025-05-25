@@ -51,7 +51,7 @@ const Dashboard = () => {
 
   // Check if daily goal is completed
   const isDailyGoalCompleted = completedReadingExercises >= dailyReadingGoal;
-
+  
   // Calculate streak based on local storage
   useEffect(() => {
     if (user) {
@@ -155,56 +155,56 @@ const Dashboard = () => {
           <div className="card flex-1 p-6"> {/* Added card class and padding */}
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Welcome back, {user?.username}</h2>
             <p className="text-gray-600 mb-4">Continue your learning journey to ace your Grade 10 entrance exam!</p>{/* Corrected text */}
-            
-            <div className="flex flex-wrap gap-3 mb-6">
-              <FadeIn delay={0.2}>
-                <div className="bg-indigo-50 px-4 py-3 rounded-lg">
-                  <div className="flex items-center gap-2">
-                    <Book className="h-5 w-5 text-indigo-600" />
-                    <span className="text-sm font-medium text-gray-700">Daily streak: {streak} days</span>
-                  </div>
+                
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <FadeIn delay={0.2}>
+                    <div className="bg-indigo-50 px-4 py-3 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <Book className="h-5 w-5 text-indigo-600" />
+                        <span className="text-sm font-medium text-gray-700">Daily streak: {streak} days</span>
+                      </div>
+                    </div>
+                  </FadeIn>
+                  
+                  <FadeIn delay={0.3}>
+                    <div className="bg-indigo-50 px-4 py-3 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <CheckSquare className="h-5 w-5 text-indigo-600" />
+                        <span className="text-sm font-medium text-gray-700">{totalCompleted} exercises completed</span>
+                      </div>
+                    </div>
+                  </FadeIn>
+                  
+                  <FadeIn delay={0.4}>
+                    <div className="bg-indigo-50 px-4 py-3 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <Award className="h-5 w-5 text-indigo-600" />
+                        <span className="text-sm font-medium text-gray-700">
+                          {Math.max(...skillProgress.map(s => s.level)) > 70 
+                            ? "Advanced" 
+                            : Math.max(...skillProgress.map(s => s.level)) > 40 
+                              ? "Intermediate" 
+                              : "Beginner"} level
+                        </span>
+                      </div>
+                    </div>
+                  </FadeIn>
                 </div>
-              </FadeIn>
+                
+                <motion.button 
+                  className="btn btn-primary"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Link to="/practice">Resume Learning</Link>
+                </motion.button>
+              </div>
               
-              <FadeIn delay={0.3}>
-                <div className="bg-indigo-50 px-4 py-3 rounded-lg">
-                  <div className="flex items-center gap-2">
-                    <CheckSquare className="h-5 w-5 text-indigo-600" />
-                    <span className="text-sm font-medium text-gray-700">{totalCompleted} exercises completed</span>
-                  </div>
-                </div>
-              </FadeIn>
-              
-              <FadeIn delay={0.4}>
-                <div className="bg-indigo-50 px-4 py-3 rounded-lg">
-                  <div className="flex items-center gap-2">
-                    <Award className="h-5 w-5 text-indigo-600" />
-                    <span className="text-sm font-medium text-gray-700">
-                      {Math.max(...skillProgress.map(s => s.level)) > 70 
-                        ? "Advanced" 
-                        : Math.max(...skillProgress.map(s => s.level)) > 40 
-                          ? "Intermediate" 
-                          : "Beginner"} level
-                    </span>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-            
-            <motion.button 
-              className="btn btn-primary"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <Link to="/practice">Resume Learning</Link>
-            </motion.button>
-          </div>
-
           {/* Today's Goal Card */}
           <FadeIn delay={0.3}> {/* Adjusted delay */}
             <div className="card bg-gradient-to-br from-indigo-600 to-indigo-800 text-white flex-1 p-6 h-full"> {/* Added card class, padding, adjusted width to flex-1, and added h-full */}
               <div className="flex flex-col h-full"> {/* Add flex column and h-full here */}
-                <h3 className="text-lg font-semibold mb-2">Today's Goal</h3>
+              <h3 className="text-lg font-semibold mb-2">Today's Goal</h3>
                 <p className="text-indigo-100 mb-4">Complete {dailyReadingGoal} reading exercises to improve your comprehension skills</p>{/* Use dailyReadingGoal variable */}
                 
                 {/* Start Exercises Button */}
@@ -217,14 +217,14 @@ const Dashboard = () => {
                 </motion.button>
 
                 <div className="mt-auto"> {/* Push progress bar to bottom */}
-                  <div className="flex justify-between items-center">
-                    <div className="bg-white/20 rounded-full h-2 w-2/3">
-                      <motion.div 
-                        className="bg-white rounded-full h-2"
-                        initial={{ width: 0 }}
+              <div className="flex justify-between items-center">
+                <div className="bg-white/20 rounded-full h-2 w-2/3">
+                  <motion.div 
+                    className="bg-white rounded-full h-2"
+                    initial={{ width: 0 }}
                         animate={{ width: `${Math.min((completedReadingExercises / dailyReadingGoal) * 100, 100)}%` }}
                         transition={{ duration: 1, delay: 0.5 }} // Adjusted delay
-                      />
+                  />
                     </div>
                     <span className="text-sm">{Math.min(completedReadingExercises, dailyReadingGoal)}/{dailyReadingGoal}</span>{/* Use completed reading count and goal */}
                   </div>
@@ -242,7 +242,7 @@ const Dashboard = () => {
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.4 }} // Adjusted delay
         >
-          {/* Skill Progress */}
+        {/* Skill Progress */}
           <motion.div className="card flex-1" whileHover={{ y: -5 }} whileTap={{ y: 0 }}> {/* Added motion and hover */} 
             <h3 className="text-lg font-semibold mb-4">Your Skill Progress</h3>
             <div className="h-64 w-full">

@@ -22,9 +22,9 @@ const Login = () => {
   
   // Redirect if already logged in
   useEffect(() => {
-    if (user) {
-      navigate('/dashboard');
-    }
+  if (user) {
+    navigate('/dashboard');
+  }
   }, [user, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
