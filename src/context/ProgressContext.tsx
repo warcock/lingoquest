@@ -34,314 +34,346 @@ const ProgressContext = createContext<ProgressContextType>({
 
 export const ProgressProvider = ({ children }: { children: ReactNode }) => {
   const { user, updateUserProfile } = useUser();
-  const [skillProgress, setSkillProgress] = useState<SkillProgress[]>(() => user?.skillProgress || [
-    { category: 'Vocabulary', level: 0, totalExercises: 20, completedExercises: 0 },
-    { category: 'Grammar', level: 0, totalExercises: 18, completedExercises: 0 },
-    { category: 'Reading', level: 0, totalExercises: 15, completedExercises: 0 },
-    { category: 'Listening', level: 0, totalExercises: 12, completedExercises: 0 },
-  ]);
-  
-  const [exercises, setExercises] = useState<Exercise[]>([
-    { 
-      id: '1', 
-      title: 'Reading Comprehension: Modern Literature', 
-      category: 'reading', 
-      difficulty: 'beginner', 
-      completed: false 
-    },
-    { 
-      id: '2', 
-      title: 'Advanced Vocabulary: Academic Terms', 
-      category: 'vocabulary', 
-      difficulty: 'advanced', 
-      completed: false 
-    },
-    { 
-      id: '3', 
-      title: 'Grammar: Complex Sentences', 
-      category: 'grammar', 
-      difficulty: 'beginner', 
-      completed: false 
-    },
-    { 
-      id: '4', 
-      title: 'Critical Reading: Main Ideas', 
-      category: 'reading', 
-      difficulty: 'intermediate', 
-      completed: false 
-    },
-    { 
-      id: '5', 
-      title: 'Writing: Essay Structure', 
-      category: 'grammar', 
-      difficulty: 'advanced', 
-      completed: false 
-    },
-    { 
-      id: '6', 
-      title: 'Vocabulary: Context Clues', 
-      category: 'vocabulary', 
-      difficulty: 'beginner', 
-      completed: false 
-    },
-    { 
-      id: '7', 
-      title: 'Reading: Inference Skills', 
-      category: 'reading', 
-      difficulty: 'intermediate', 
-      completed: false 
-    },
-    { 
-      id: '8', 
-      title: 'Grammar: Punctuation Rules', 
-      category: 'grammar', 
-      difficulty: 'intermediate', 
-      completed: false 
-    },
-    { 
-      id: '9', 
-      title: 'Vocabulary: Literary Devices', 
-      category: 'vocabulary', 
-      difficulty: 'advanced', 
-      completed: false 
-    }
-  ]);
-  
-  const [quizzes, setQuizzes] = useState<Quiz[]>([
-    {
-      id: 'reading-comprehension',
-      title: 'Reading Comprehension Practice',
-      category: 'reading',
-      difficulty: 'beginner',
-      completed: false,
-      score: 0,
-      userAnswers: [],
-      questions: [
-        {
-          id: 'q1-reading',
-          text: 'Read the following passage and answer the question:\n\n"The invention of the printing press in the 15th century revolutionized the way information was shared. Before this invention, books were handwritten, making them expensive and rare. The printing press allowed for mass production of books, making them more accessible to the general public."\n\nWhat was the main impact of the printing press?',
-          options: [
-            'It made books more expensive',
-            'It made books more accessible to people',
-            'It made books handwritten',
-            'It made books rare'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q2-reading',
-          text: 'Based on the same passage, what was the situation before the printing press?',
-          options: [
-            'Books were mass-produced',
-            'Books were handwritten and expensive',
-            'Books were easily accessible',
-            'Books were printed quickly'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q3-reading',
-          text: 'What is the main purpose of this passage?',
-          options: [
-            'To describe the process of printing',
-            'To explain the impact of the printing press',
-            'To list different types of books',
-            'To compare old and new books'
-          ],
-          correctAnswer: 1
-        }
-      ]
-    },
-    {
-      id: 'grammar-practice',
-      title: 'Grammar and Sentence Structure',
-      category: 'grammar',
-      difficulty: 'beginner',
-      completed: false,
-      score: 0,
-      userAnswers: [],
-      questions: [
-        {
-          id: 'q1-grammar',
-          text: 'Which sentence is grammatically correct?',
-          options: [
-            'The students was studying for their exam',
-            'The students were studying for their exam',
-            'The students is studying for their exam',
-            'The students be studying for their exam'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q2-grammar',
-          text: 'Choose the correct sentence structure:',
-          options: [
-            'Because it was raining, the game was cancelled',
-            'The game was cancelled because it was raining',
-            'Both A and B are correct',
-            'Neither A nor B is correct'
-          ],
-          correctAnswer: 2
-        },
-        {
-          id: 'q3-grammar',
-          text: 'Which sentence uses the correct punctuation?',
-          options: [
-            'The teacher asked "Who wants to answer the question?"',
-            'The teacher asked, "Who wants to answer the question?"',
-            'The teacher asked "Who wants to answer the question"?',
-            'The teacher asked, "Who wants to answer the question"?'
-          ],
-          correctAnswer: 1
-        }
-      ]
-    },
-    {
-      id: 'vocabulary-practice',
-      title: 'Vocabulary and Word Usage',
-      category: 'vocabulary',
-      difficulty: 'intermediate',
-      completed: false,
-      score: 0,
-      userAnswers: [],
-      questions: [
-        {
-          id: 'q1-vocab',
-          text: 'What is the meaning of the word "ambiguous"?',
-          options: [
-            'Clear and definite',
-            'Open to multiple interpretations',
-            'Always true',
-            'Never changing'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q2-vocab',
-          text: 'Which word is a synonym for "perseverance"?',
-          options: [
-            'Giving up',
-            'Persistence',
-            'Failure',
-            'Laziness'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q3-vocab',
-          text: 'What is the correct meaning of "to infer"?',
-          options: [
-            'To state directly',
-            'To draw a conclusion from evidence',
-            'To ignore information',
-            'To make up facts'
-          ],
-          correctAnswer: 1
-        }
-      ]
-    },
-    {
-      id: 'writing-skills',
-      title: 'Writing and Composition',
-      category: 'grammar',
-      difficulty: 'intermediate',
-      completed: false,
-      score: 0,
-      userAnswers: [],
-      questions: [
-        {
-          id: 'q1-writing',
-          text: 'Which is the best topic sentence for an essay about climate change?',
-          options: [
-            'Climate change is bad',
-            'Climate change affects our planet in many ways',
-            'I think climate change is important',
-            'Many people talk about climate change'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q2-writing',
-          text: 'What is the purpose of a concluding paragraph?',
-          options: [
-            'To introduce new topics',
-            'To summarize main points and provide closure',
-            'To list all references',
-            'To add more questions'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q3-writing',
-          text: 'Which is an example of a strong thesis statement?',
-          options: [
-            'This essay is about education',
-            'Education is important',
-            'The current education system needs reform to better prepare students for the future',
-            'I will write about education'
-          ],
-          correctAnswer: 2
-        }
-      ]
-    },
-    {
-      id: 'critical-thinking',
-      title: 'Critical Thinking and Analysis',
-      category: 'reading',
-      difficulty: 'advanced',
-      completed: false,
-      score: 0,
-      userAnswers: [],
-      questions: [
-        {
-          id: 'q1-critical',
-          text: 'Read the following argument:\n\n"All students who study hard get good grades. John got good grades. Therefore, John must have studied hard."\n\nWhat is the logical flaw in this argument?',
-          options: [
-            'It assumes studying hard is the only way to get good grades',
-            'It provides too much evidence',
-            'It uses too many examples',
-            'It is too long'
-          ],
-          correctAnswer: 0
-        },
-        {
-          id: 'q2-critical',
-          text: 'Which statement is an example of a fact rather than an opinion?',
-          options: [
-            'This is the best book ever written',
-            'The book was published in 2020',
-            'The book is very interesting',
-            'The book should be required reading'
-          ],
-          correctAnswer: 1
-        },
-        {
-          id: 'q3-critical',
-          text: 'What is the main purpose of a counterargument in an essay?',
-          options: [
-            'To confuse the reader',
-            'To address opposing viewpoints and strengthen your argument',
-            'To make the essay longer',
-            'To show you know both sides'
-          ],
-          correctAnswer: 1
-        }
-      ]
-    }
-  ]);
-
-  // Add state for difficulty filters
+  const [skillProgress, setSkillProgress] = useState<SkillProgress[]>([]);
+  const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [quizzes, setQuizzes] = useState<Quiz[]>([]);
   const [exerciseDifficultyFilter, setExerciseDifficultyFilter] = useState<string | null>(null);
   const [quizDifficultyFilter, setQuizDifficultyFilter] = useState<string | null>(null);
 
-  // Compute filtered exercises and quizzes
-  const filteredExercises = exercises.filter(exercise => 
-    exerciseDifficultyFilter ? exercise.difficulty === exerciseDifficultyFilter : true
-  );
+  // Initialize state with default values
+  useEffect(() => {
+    // Set default skill progress
+    setSkillProgress(user?.skillProgress || [
+      { category: 'Vocabulary', level: 0, totalExercises: 20, completedExercises: 0 },
+      { category: 'Grammar', level: 0, totalExercises: 18, completedExercises: 0 },
+      { category: 'Reading', level: 0, totalExercises: 15, completedExercises: 0 },
+      { category: 'Listening', level: 0, totalExercises: 12, completedExercises: 0 },
+    ]);
 
-  const filteredQuizzes = quizzes.filter(quiz => 
-    quizDifficultyFilter ? quiz.difficulty === quizDifficultyFilter : true
-  );
+    // Set default exercises
+    setExercises([
+      { 
+        id: '1', 
+        title: 'Reading Comprehension: Modern Literature', 
+        category: 'reading', 
+        difficulty: 'beginner', 
+        completed: false,
+        passage: `The Annual Spring Festival will take place this Saturday at Central Park. The festival gates will open at 10:00 AM, and visitors can enjoy various activities throughout the day. Food stalls will be available starting at 11:00 AM, offering a wide variety of local and international cuisines. The main stage performances will begin at 1:00 PM, featuring local artists and cultural performances. The highlight of the evening will be the spectacular fireworks display at 9:00 PM, followed by the festival's closing ceremony. The event will conclude at 10:00 PM.`,
+        options: {
+          q1: [
+            'The festival will end at 6:00 PM',
+            'The festival will end at 8:00 PM',
+            'The festival will end at 10:00 PM',
+            'The festival will end at midnight'
+          ],
+          q2: [
+            'The festival starts at 10:00 AM',
+            'The festival starts at 12:00 PM',
+            'The festival starts at 2:00 PM',
+            'The festival starts at 4:00 PM'
+          ],
+          q3: [
+            'The main stage performances begin at 1:00 PM',
+            'The main stage performances begin at 3:00 PM',
+            'The main stage performances begin at 5:00 PM',
+            'The main stage performances begin at 7:00 PM'
+          ],
+          q4: [
+            'The food stalls open at 11:00 AM',
+            'The food stalls open at 1:00 PM',
+            'The food stalls open at 3:00 PM',
+            'The food stalls open at 5:00 PM'
+          ],
+          q5: [
+            'The fireworks display is at 9:00 PM',
+            'The fireworks display is at 10:00 PM',
+            'The fireworks display is at 11:00 PM',
+            'The fireworks display is at midnight'
+          ]
+        }
+      },
+      { 
+        id: '2', 
+        title: 'Advanced Vocabulary: Academic Terms', 
+        category: 'vocabulary', 
+        difficulty: 'advanced', 
+        completed: false 
+      },
+      { 
+        id: '3', 
+        title: 'Grammar: Complex Sentences', 
+        category: 'grammar', 
+        difficulty: 'beginner', 
+        completed: false 
+      },
+      { 
+        id: '4', 
+        title: 'Critical Reading: Main Ideas', 
+        category: 'reading', 
+        difficulty: 'intermediate', 
+        completed: false 
+      },
+      { 
+        id: '5', 
+        title: 'Writing: Essay Structure', 
+        category: 'grammar', 
+        difficulty: 'advanced', 
+        completed: false 
+      },
+      { 
+        id: '6', 
+        title: 'Vocabulary: Context Clues', 
+        category: 'vocabulary', 
+        difficulty: 'beginner', 
+        completed: false 
+      },
+      { 
+        id: '7', 
+        title: 'Reading: Inference Skills', 
+        category: 'reading', 
+        difficulty: 'intermediate', 
+        completed: false 
+      },
+      { 
+        id: '8', 
+        title: 'Grammar: Punctuation Rules', 
+        category: 'grammar', 
+        difficulty: 'intermediate', 
+        completed: false 
+      },
+      { 
+        id: '9', 
+        title: 'Vocabulary: Literary Devices', 
+        category: 'vocabulary', 
+        difficulty: 'advanced', 
+        completed: false 
+      }
+    ]);
+
+    // Set default quizzes
+    setQuizzes([
+      {
+        id: 'reading-comprehension',
+        title: 'Reading Comprehension Practice',
+        category: 'reading',
+        difficulty: 'beginner',
+        completed: false,
+        score: 0,
+        userAnswers: [],
+        questions: [
+          {
+            id: 'q1-reading',
+            text: 'Read the following passage and answer the question:\n\n"The invention of the printing press in the 15th century revolutionized the way information was shared. Before this invention, books were handwritten, making them expensive and rare. The printing press allowed for mass production of books, making them more accessible to the general public."\n\nWhat was the main impact of the printing press?',
+            options: [
+              'It made books more expensive',
+              'It made books more accessible to people',
+              'It made books handwritten',
+              'It made books rare'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q2-reading',
+            text: 'Based on the same passage, what was the situation before the printing press?',
+            options: [
+              'Books were mass-produced',
+              'Books were handwritten and expensive',
+              'Books were easily accessible',
+              'Books were printed quickly'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q3-reading',
+            text: 'What is the main purpose of this passage?',
+            options: [
+              'To describe the process of printing',
+              'To explain the impact of the printing press',
+              'To list different types of books',
+              'To compare old and new books'
+            ],
+            correctAnswer: 1
+          }
+        ]
+      },
+      {
+        id: 'grammar-practice',
+        title: 'Grammar and Sentence Structure',
+        category: 'grammar',
+        difficulty: 'beginner',
+        completed: false,
+        score: 0,
+        userAnswers: [],
+        questions: [
+          {
+            id: 'q1-grammar',
+            text: 'Which sentence is grammatically correct?',
+            options: [
+              'The students was studying for their exam',
+              'The students were studying for their exam',
+              'The students is studying for their exam',
+              'The students be studying for their exam'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q2-grammar',
+            text: 'Choose the correct sentence structure:',
+            options: [
+              'Because it was raining, the game was cancelled',
+              'The game was cancelled because it was raining',
+              'Both A and B are correct',
+              'Neither A nor B is correct'
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: 'q3-grammar',
+            text: 'Which sentence uses the correct punctuation?',
+            options: [
+              'The teacher asked "Who wants to answer the question?"',
+              'The teacher asked, "Who wants to answer the question?"',
+              'The teacher asked "Who wants to answer the question"?',
+              'The teacher asked, "Who wants to answer the question"?'
+            ],
+            correctAnswer: 1
+          }
+        ]
+      },
+      {
+        id: 'vocabulary-practice',
+        title: 'Vocabulary and Word Usage',
+        category: 'vocabulary',
+        difficulty: 'intermediate',
+        completed: false,
+        score: 0,
+        userAnswers: [],
+        questions: [
+          {
+            id: 'q1-vocab',
+            text: 'What is the meaning of the word "ambiguous"?',
+            options: [
+              'Clear and definite',
+              'Open to multiple interpretations',
+              'Always true',
+              'Never changing'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q2-vocab',
+            text: 'Which word is a synonym for "perseverance"?',
+            options: [
+              'Giving up',
+              'Persistence',
+              'Failure',
+              'Laziness'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q3-vocab',
+            text: 'What is the correct meaning of "to infer"?',
+            options: [
+              'To state directly',
+              'To draw a conclusion from evidence',
+              'To ignore information',
+              'To make up facts'
+            ],
+            correctAnswer: 1
+          }
+        ]
+      },
+      {
+        id: 'writing-skills',
+        title: 'Writing and Composition',
+        category: 'grammar',
+        difficulty: 'intermediate',
+        completed: false,
+        score: 0,
+        userAnswers: [],
+        questions: [
+          {
+            id: 'q1-writing',
+            text: 'Which is the best topic sentence for an essay about climate change?',
+            options: [
+              'Climate change is bad',
+              'Climate change affects our planet in many ways',
+              'I think climate change is important',
+              'Many people talk about climate change'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q2-writing',
+            text: 'What is the purpose of a concluding paragraph?',
+            options: [
+              'To introduce new topics',
+              'To summarize main points and provide closure',
+              'To list all references',
+              'To add more questions'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q3-writing',
+            text: 'Which is an example of a strong thesis statement?',
+            options: [
+              'This essay is about education',
+              'Education is important',
+              'The current education system needs reform to better prepare students for the future',
+              'I will write about education'
+            ],
+            correctAnswer: 2
+          }
+        ]
+      },
+      {
+        id: 'critical-thinking',
+        title: 'Critical Thinking and Analysis',
+        category: 'reading',
+        difficulty: 'advanced',
+        completed: false,
+        score: 0,
+        userAnswers: [],
+        questions: [
+          {
+            id: 'q1-critical',
+            text: 'Read the following argument:\n\n"All students who study hard get good grades. John got good grades. Therefore, John must have studied hard."\n\nWhat is the logical flaw in this argument?',
+            options: [
+              'It assumes studying hard is the only way to get good grades',
+              'It provides too much evidence',
+              'It uses too many examples',
+              'It is too long'
+            ],
+            correctAnswer: 0
+          },
+          {
+            id: 'q2-critical',
+            text: 'Which statement is an example of a fact rather than an opinion?',
+            options: [
+              'This is the best book ever written',
+              'The book was published in 2020',
+              'The book is very interesting',
+              'The book should be required reading'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q3-critical',
+            text: 'What is the main purpose of a counterargument in an essay?',
+            options: [
+              'To confuse the reader',
+              'To address opposing viewpoints and strengthen your argument',
+              'To make the essay longer',
+              'To show you know both sides'
+            ],
+            correctAnswer: 1
+          }
+        ]
+      }
+    ]);
+  }, [user]);
 
   // Load user progress if available
   useEffect(() => {
@@ -365,50 +397,31 @@ export const ProgressProvider = ({ children }: { children: ReactNode }) => {
     }
     
     // Load user quiz completion
-    localStorage.removeItem(`user-${user.id}-quizzes`); // Clear old quiz data
     const storedQuizzes = localStorage.getItem(`user-${user.id}-quizzes`);
-    let loadedQuizzes: Quiz[] = [];
     if (storedQuizzes) {
       try {
-        loadedQuizzes = JSON.parse(storedQuizzes);
+        const loadedQuizzes = JSON.parse(storedQuizzes);
+        setQuizzes(prevQuizzes => {
+          // Merge with defaults, keeping completion status from storage
+          return prevQuizzes.map(defaultQuiz => {
+            const storedQuiz = loadedQuizzes.find((q: Quiz) => q.id === defaultQuiz.id);
+            return storedQuiz ? { ...defaultQuiz, ...storedQuiz } : defaultQuiz;
+          });
+        });
       } catch (e) {
         console.error("Error loading quizzes from localStorage:", e);
-        // If loading fails, fallback to initial quizzes state
-        loadedQuizzes = quizzes; // Use initial state as fallback
+      }
     }
-    } else {
-       // If no stored quizzes, fallback to initial quizzes state
-       loadedQuizzes = quizzes;
-    }
+  }, [user]);
 
-    // Get the current initial quizzes state
-    const initialQuizzes = quizzes; // Reference the state directly
+  // Compute filtered exercises and quizzes
+  const filteredExercises = exercises.filter(exercise => 
+    exerciseDifficultyFilter ? exercise.difficulty === exerciseDifficultyFilter : true
+  );
 
-    // Create a map of loaded quizzes by ID for efficient lookup
-    const loadedQuizzesMap = new Map(loadedQuizzes.map(quiz => [quiz.id, quiz]));
-
-    // Merge initial quizzes with loaded quizzes, prioritizing loaded ones for matching IDs
-    const mergedQuizzes = initialQuizzes.map(initialQuiz => {
-      const loadedQuiz = loadedQuizzesMap.get(initialQuiz.id);
-      return loadedQuiz ? loadedQuiz : initialQuiz;
-    });
-
-    // Add any quizzes from loadedQuizzes that are not in initialQuizzes (in case new quizzes are added to storage somehow)
-    const additionalQuizzes = loadedQuizzes.filter(loadedQuiz => 
-      !initialQuizzes.some(initialQuiz => initialQuiz.id === loadedQuiz.id)
-    );
-
-    // Sort quizzes with completed ones at the top
-    const allQuizzes = [...mergedQuizzes, ...additionalQuizzes];
-    const sortedQuizzes = allQuizzes.sort((a, b) => {
-      if (a.completed && !b.completed) return -1;
-      if (!a.completed && b.completed) return 1;
-      return 0;
-    });
-
-    setQuizzes(sortedQuizzes);
-
-  }, [user]); // Depend on user to reload when user logs in/out
+  const filteredQuizzes = quizzes.filter(quiz => 
+    quizDifficultyFilter ? quiz.difficulty === quizDifficultyFilter : true
+  );
 
   // Update skill progress
   const updateSkillProgress = (category: string, _points: number) => {

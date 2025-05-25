@@ -374,27 +374,29 @@ const Quizzes = () => {
                     
                     <div className="mt-2 space-y-2">
                       {activeQuiz?.questions?.[currentQuestionIndex]?.options?.map((option: string, index: number) => (
-                        <label key={index} className="flex items-center">
-                          <input 
-                            type="radio" 
-                            name="answer"
-                            className="mr-2"
-                            checked={selectedAnswer === index}
-                            onChange={() => handleAnswerSelect(index)}
-                            disabled={isSubmitted}
-                          />
-                          <span className={`${
-                            isSubmitted ? (
-                              index === activeQuiz.questions[currentQuestionIndex].correctAnswer
-                                ? 'text-green-600 font-medium'
-                                : selectedAnswer === index
-                                  ? 'text-red-600'
-                                  : ''
-                            ) : ''
-                          }`}>
-                            {option}
-                          </span>
-                        </label>
+                        <div key={index} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                          <label className="flex items-center cursor-pointer">
+                            <input 
+                              type="radio" 
+                              name={activeQuiz.questions[currentQuestionIndex].id} 
+                              className="mr-2"
+                              checked={selectedAnswer === index}
+                              onChange={() => handleAnswerSelect(index)}
+                              disabled={isSubmitted}
+                            />
+                            <span className={`flex-1 ${
+                              isSubmitted ? (
+                                index === activeQuiz.questions[currentQuestionIndex].correctAnswer
+                                  ? 'text-green-700 font-medium'
+                                  : selectedAnswer === index
+                                    ? 'text-red-700'
+                                    : ''
+                              ) : ''
+                            }`}>
+                              {option}
+                            </span>
+                          </label>
+                        </div>
                       ))}
                     </div>
 

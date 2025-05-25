@@ -51,7 +51,7 @@ const Register = () => {
       setIsLoading(true);
       // Register the user with the provided details
       const success = await register({
-        name,
+        username: name,
         email,
         password
       });

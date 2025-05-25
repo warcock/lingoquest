@@ -1,8 +1,7 @@
-import { ReactNode } from "react";
-
 export  interface User {
-  id: string;
-  name: string;
+  id: any;
+  _id: string;
+  username: string;
   email: string;
   skillProgress?: SkillProgress[];
   friends?: Friend[];
@@ -15,6 +14,7 @@ export  interface User {
     achievements: boolean;
   };
   passwordUpdated?: string;
+  token: string;
 }
 
 export interface SkillProgress {
@@ -26,25 +26,33 @@ export interface SkillProgress {
 
 export interface Friend {
   id: string;
-  name: string;
+  username: string;
   email: string;
   level: number;
 }
 
 export interface FriendRequest {
   id: string;
-  name: string;
+  username: string;
+  email: string;
+}
+
+export interface SentFriendRequest {
+  id: string;
+  username: string;
   email: string;
 }
 
 export interface Exercise {
-  [x: string]: ReactNode;
   id: string;
   title: string;
-  category: string; // vocabulary, grammar, reading, listening
-  difficulty: string; // beginner, intermediate, advanced
+  category: string;
+  difficulty: string;
   completed: boolean;
-  score?: number;
+  passage?: string;
+  options?: {
+    [key: string]: string[];
+  };
 }
 
 export interface Quiz {

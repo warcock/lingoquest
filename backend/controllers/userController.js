@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Activity = require('../models/Activity');
 
 // Generate JWT
 const generateToken = (id) => {
@@ -109,10 +110,26 @@ const updateProgress = async (req, res) => {
         user.progress.experience += experienceGained;
 
         // Level up if enough experience (example: 100 experience per level)
+        const oldLevel = user.progress.currentLevel;
         const newLevel = Math.floor(user.progress.experience / 100) + 1;
-        if (newLevel > user.progress.currentLevel) {
+        if (newLevel > oldLevel) {
             user.progress.currentLevel = newLevel;
+            // Create activity for achieving a new level
+            await Activity.create({
+                user: user._id,
+                type: 'achieved_level',
+                details: { level: newLevel }
+            });
         }
+        
+        // Create activity for completing a quiz
+        // To get quiz title, we might need to populate or send it from frontend
+        // For simplicity now, just store quizId and score
+        await Activity.create({
+            user: user._id,
+            type: 'completed_quiz',
+            details: { quizId, score }
+        });
 
         await user.save();
         res.json(user.progress);

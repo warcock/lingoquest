@@ -147,38 +147,53 @@ const Practice = () => {
   // Get explanations for a specific question
   const getExplanation = (questionId: string) => {
     switch (questionId) {
-      case 'q1-reading': // Reading Comprehension
-        return "The main impact of the printing press was making books more accessible to people. This is evident from the passage which states that the printing press 'allowed for mass production of books, making them more accessible to the general public.'";
-      case 'q2-reading': // Reading Comprehension
-        return 'Based on the passage, before the printing press, books were handwritten, making them expensive and rare.';
-      case 'q3-reading': // Reading Comprehension
-        return 'The main purpose of this passage is to explain the impact of the printing press on the accessibility of books.';
-      case 'q1-grammar': // Grammar
-        return "The correct sentence is 'The students were studying for their exam.' When the subject is plural (students), we use the plural form of the verb (were).";
-      case 'q2-grammar': // Grammar
-        return "Both sentence structures are correct. The first uses a dependent clause followed by an independent clause, while the second uses an independent clause followed by a dependent clause.";
-      case 'q3-grammar': // Grammar
-        return 'The correct punctuation for a sentence with a quote at the end is a comma before the opening quote and the punctuation inside the closing quote if it is part of the quote.';
-      case 'q1-vocab': // Vocabulary
-        return "The word 'ambiguous' means open to multiple interpretations. It comes from the Latin word 'ambiguus' meaning 'having double meaning'.";
-      case 'q2-vocab': // Vocabulary
-        return "The word 'perseverance' means persistence in doing something despite difficulty. It's a key trait for academic success.";
-      case 'q3-vocab': // Vocabulary
-        return "To infer means to draw a conclusion from evidence and reasoning rather than explicit statements.";
-      case 'q1-writing': // Writing
-        return "A good topic sentence introduces the main idea of a paragraph and should be clear and concise.";
-      case 'q2-writing': // Writing
-        return "A concluding paragraph summarizes the main points of the essay and provides a sense of closure, often by restating the thesis in different words or offering a final thought.";
-      case 'q3-writing': // Writing
-        return "A strong thesis statement is specific, debatable, and outlines the main points of the essay. The option 'The current education system needs reform to better prepare students for the future' presents a clear argument that can be supported with evidence.";
-      case 'q1-critical': // Critical Thinking
-        return "This is an example of a logical fallacy called Affirming the Consequent. Just because studying hard can lead to good grades doesn't mean it's the only cause, or that getting good grades definitively proves someone studied hard.";
-      case 'q2-critical': // Critical Thinking
-        return "A fact is a statement that can be verified and proven true, while an opinion is a personal belief or judgment. The publication date of a book is a verifiable fact.";
-      case 'q3-critical': // Critical Thinking
-        return "A counterargument is used to acknowledge and address opposing viewpoints, which strengthens your own argument by showing you've considered other perspectives and can respond to them.";
+      case 'q1-reading':
+        return 'The correct answer is "It made books more accessible to people." This is the main impact because the passage specifically states that the printing press "allowed for mass production of books, making them more accessible to the general public." Before the printing press, books were handwritten and expensive, making them rare and only available to the wealthy. The invention of the printing press revolutionized information sharing by making books affordable and available to everyone. This historical development was crucial in spreading knowledge and education throughout society.';
+      
+      case 'q2-reading':
+        return 'The correct answer is "Books were handwritten and expensive." This is supported by the passage which states that "Before this invention, books were handwritten, making them expensive and rare." This historical context is important because it helps us understand why the printing press was such a revolutionary invention. The process of handwriting books was time-consuming and labor-intensive, which contributed to their high cost and limited availability. This meant that only the wealthy and powerful had access to books and knowledge, creating a significant barrier to education and information sharing.';
+      
+      case 'q3-reading':
+        return 'The correct answer is "To explain the impact of the printing press." The passage is structured to first describe the situation before the printing press (handwritten, expensive books), then introduce the invention, and finally explain its main impact (making books accessible to the public). This structure helps readers understand the significance of the printing press in changing how information was shared in society. The passage uses a cause-and-effect structure to show how this invention transformed the availability of books and, consequently, the spread of knowledge.';
+      
+      case 'q1-grammar':
+        return 'The correct answer is "The students were studying for their exam." This is correct because "students" is a plural noun, so it requires the plural form of the verb "to be" (were). The other options are incorrect because they use singular forms (was/is) or an incorrect form (be) with a plural subject. This is a fundamental rule of subject-verb agreement in English grammar. Understanding this rule is essential for clear communication and proper sentence structure. The rule states that the verb must agree with its subject in number (singular or plural).';
+      
+      case 'q2-grammar':
+        return 'The correct answer is "Both A and B are correct." Both sentence structures are grammatically correct. The first sentence uses a dependent clause followed by a comma and an independent clause. The second sentence uses an independent clause followed by a dependent clause. The meaning is the same in both cases, demonstrating how English allows for flexible sentence structure while maintaining clarity. This flexibility in sentence structure is one of the strengths of English, allowing writers to vary their writing style and emphasize different parts of the sentence.';
+      
+      case 'q3-grammar':
+        return 'The correct answer is "The teacher asked, \'Who wants to answer the question?\'" This is correct because it follows the proper punctuation rules for direct speech: 1) A comma is used before the quotation marks, 2) The question mark goes inside the quotation marks, and 3) The sentence ends with a period after the closing quotation mark. This is a common punctuation pattern in English for reporting speech. Proper punctuation is crucial for clear communication and helps readers understand the relationship between different parts of the sentence.';
+      
+      case 'q1-vocab':
+        return 'The correct answer is "Open to multiple interpretations." The word "ambiguous" means having multiple possible meanings or interpretations. This is different from being "clear and definite" (which is the opposite of ambiguous), "always true" (which is about certainty), or "never changing" (which is about stability). Understanding this word is important for reading comprehension as it helps identify when a text might have multiple valid interpretations.';
+      
+      case 'q2-vocab':
+        return 'The correct answer is "Persistence." This is a synonym for "perseverance," which means continuing to do something despite difficulties or delays. The other options are antonyms: "Giving up" is the opposite of perseverance, "Failure" is a possible outcome of not persevering, and "Laziness" is a trait that would prevent perseverance. Understanding synonyms helps expand vocabulary and improve reading comprehension.';
+      
+      case 'q3-vocab':
+        return 'The correct answer is "To draw a conclusion from evidence." The word "infer" means to reach a conclusion based on evidence and reasoning. It is different from "stating directly" (which is explicit rather than implicit), "ignoring information" (which is the opposite of using evidence), or "making up facts" (which is not based on evidence). This is a crucial reading skill that helps readers understand implied meanings in texts.';
+      
+      case 'q1-writing':
+        return 'The correct answer is "Climate change affects our planet in many ways." This is the best topic sentence because it is specific, makes a clear statement, and sets up the possibility for detailed discussion. The other options are either too vague ("Climate change is bad"), too personal ("I think climate change is important"), or too general ("Many people talk about climate change"). A good topic sentence should be specific enough to guide the reader while being broad enough to allow for supporting details.';
+      
+      case 'q2-writing':
+        return 'The correct answer is "To summarize main points and provide closure." A concluding paragraph serves several important purposes: it reminds readers of the main arguments, ties together different points, and provides a sense of completion. The other options describe inappropriate uses of a conclusion: introducing new topics would confuse readers, listing references belongs in a separate section, and adding more questions would leave the essay unresolved.';
+      
+      case 'q3-writing':
+        return 'The correct answer is "The current education system needs reform to better prepare students for the future." This is a strong thesis statement because it is specific, makes a clear argument, and suggests a solution. The other options are weak because they are either too vague ("Education is important"), too personal ("I will write about education"), or too general ("This essay is about education"). A strong thesis statement should be specific, arguable, and provide direction for the essay.';
+      
+      case 'q1-critical':
+        return 'The correct answer is "It assumes studying hard is the only way to get good grades." This is a logical flaw because the argument makes an incorrect assumption. The argument states that all students who study hard get good grades, and John got good grades, therefore John must have studied hard. This is a logical error because there could be other ways to get good grades (natural talent, good teaching, etc.). This is an example of the logical fallacy of affirming the consequent.';
+      
+      case 'q2-critical':
+        return 'The correct answer is "The book was published in 2020." This is a fact because it can be verified and is not based on personal opinion. The other options are opinions because they express personal judgments ("best book ever," "very interesting," "should be required"). Understanding the difference between facts and opinions is crucial for critical thinking and evaluating the reliability of information.';
+      
+      case 'q3-critical':
+        return 'The correct answer is "To address opposing viewpoints and strengthen your argument." Including counterarguments is an important part of persuasive writing because it shows that the writer has considered different perspectives. The other options describe inappropriate uses of counterarguments: confusing the reader would weaken the argument, making the essay longer is not a valid purpose, and showing knowledge of both sides is not the main purpose. A well-handled counterargument actually strengthens the writer\'s position by addressing potential objections.';
+      
       default:
-        return "No explanation available for this question.";
+        return 'The correct answer is based on the information provided in the passage.';
     }
   };
   
@@ -221,374 +236,128 @@ const Practice = () => {
   };
 
   // Get the feedback class for an answer
-  const getAnswerFeedbackClass = (questionId: string, answerIndex: number) => {
-    if (!exerciseComplete || userAnswers[questionId] !== answerIndex) return '';
-    
-    const isCorrect = answerIndex === getCorrectAnswer(questionId);
-    return isCorrect ? 'text-green-700 font-medium' : 'text-red-700';
-  };
   
   // Mock questions for exercises based on category
   const getExerciseContent = (exercise: any) => {
-    if (exercise.category === 'vocabulary') {
+    // Define types for options
+    type QuestionOptions = {
+      [key: string]: string[];
+    };
+
+    type CategoryOptions = {
+      [key: string]: QuestionOptions;
+    };
+
+    // Default options for each category
+    const defaultOptions: CategoryOptions = {
+      vocabulary: {
+        q1: ['Very small', 'Very tasty', 'Very large', 'Very old'],
+        q2: ['Very small', 'Very tasty', 'Very large', 'Very old'],
+        q3: ['Very small', 'Very tasty', 'Very large', 'Very old'],
+        q4: ['Very small', 'Very tasty', 'Very large', 'Very old'],
+        q5: ['Very small', 'Very tasty', 'Very large', 'Very old']
+      },
+      grammar: {
+        g1: ['I am go to school everyday', 'I go to school everyday', 'I going to school everyday', 'I goes to school everyday'],
+        g2: ['She don\'t like apples', 'She doesn\'t like apples', 'She not like apples', 'She no like apples'],
+        g3: ['They play football', 'They played football', 'They are playing football', 'They playing football'],
+        g4: ['He have finished his homework', 'He has finished his homework', 'He finished his homework', 'He finishing his homework'],
+        g5: ['We was watching TV', 'We were watching TV', 'We watching TV', 'We watch TV']
+      },
+      reading: {
+        r1: ['Next Saturday', 'This Friday', 'Tomorrow', 'Next Sunday'],
+        r2: ['At the school playground', 'At the city park', 'At the community center', 'At the sports center'],
+        r3: ['School uniform', 'Casual clothes', 'Formal clothes', 'Sports clothes'],
+        r4: ['Activities and food stalls', 'Only games', 'Only food stalls', 'Only performances'],
+        r5: ['Parents are welcome', 'Only students', 'Only teachers', 'No visitors allowed']
+      },
+      listening: {
+        l1: ['Sarah', 'Sandra', 'Sara', 'Susan'],
+        l2: ['Teacher', 'Doctor', 'Engineer', 'Lawyer'],
+        l3: ['Bangkok University', 'Chiang Mai University', 'Thammasat University', 'Mahidol University'],
+        l4: ['English literature', 'Education', 'Business', 'Science'],
+        l5: ['Student', 'Teacher', 'Professor', 'Researcher']
+      }
+    };
+
+    // Get options based on category and question
+    const getOptions = (questionId: string) => {
+      const category = exercise?.category as keyof typeof defaultOptions;
+      return exercise?.options?.[questionId] || defaultOptions[category]?.[questionId] || [];
+    };
+
+    if (exercise?.category === 'vocabulary') {
       return (
         <div className="space-y-6">
           <p className="text-gray-700">Match the words with their definitions:</p>
           
           <div className="space-y-4">
-            <div className="p-3 border rounded-lg">
+            {['q1', 'q2', 'q3', 'q4', 'q5'].map((questionId) => (
+              <div key={questionId} className="p-3 border rounded-lg">
               <div className="flex justify-between items-center">
-                <p className="font-medium">Enormous</p>
+                  <p className="font-medium">
+                    {questionId === 'q1' ? 'Enormous' :
+                     questionId === 'q2' ? 'Delicious' :
+                     questionId === 'q3' ? 'Brave' :
+                     questionId === 'q4' ? 'Ancient' : 'Beautiful'}
+                  </p>
                 {exerciseComplete && (
                   <button 
-                    onClick={() => toggleExplanation('q1')}
+                      onClick={() => toggleExplanation(questionId)}
                     className="flex items-center text-xs text-indigo-600 hover:text-indigo-800"
                   >
                     <HelpCircle size={14} className="mr-1" />
-                    {showExplanations['q1'] ? 'Hide' : 'Show'} explanation
+                      {showExplanations[questionId] ? 'Hide' : 'Show'} explanation
                   </button>
                 )}
               </div>
               
               <div className="mt-2 space-y-2">
-                <label className="flex items-center">
+                  {getOptions(questionId).map((option: string, optionIndex: number) => (
+                    <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                      <label className="flex items-center cursor-pointer">
                   <input 
                     type="radio" 
-                    name="q1" 
+                          name={questionId} 
                     className="mr-2" 
-                    checked={userAnswers['q1'] === 0}
-                    onChange={() => handleAnswerSelect('q1', 0)}
+                          checked={userAnswers[questionId] === optionIndex}
+                          onChange={() => handleAnswerSelect(questionId, optionIndex)}
                     disabled={exerciseComplete}
                   />
-                  <span className={getAnswerFeedbackClass('q1', 0)}>
-                    Very small
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q1" 
-                    className="mr-2"
-                    checked={userAnswers['q1'] === 1}
-                    onChange={() => handleAnswerSelect('q1', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={getAnswerFeedbackClass('q1', 1)}>
-                    Very fast
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q1" 
-                    className="mr-2"
-                    checked={userAnswers['q1'] === 2}
-                    onChange={() => handleAnswerSelect('q1', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q1'] === 2 ? (isAnswerCorrect('q1') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very large
+                        <span className={`flex-1 ${
+                          exerciseComplete ? (
+                            optionIndex === getCorrectAnswer(questionId)
+                              ? 'text-green-700 font-medium'
+                              : userAnswers[questionId] === optionIndex
+                                ? 'text-red-700'
+                                : ''
+                          ) : ''
+                        }`}>
+                          {option}
                   </span>
                 </label>
               </div>
+                  ))}
+              </div>
               
               <AnimatePresence>
-                {showExplanations['q1'] && (
+                  {showExplanations[questionId] && (
                   <motion.div 
                     className="mt-3 text-sm bg-indigo-50 p-3 rounded-lg"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                   >
-                    {getExplanation('q1')}
+                      {getExplanation(questionId)}
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
-            
-            <div className="p-3 border rounded-lg">
-              <div className="flex justify-between items-center">
-                <p className="font-medium">Delicious</p>
-                {exerciseComplete && (
-                  <button 
-                    onClick={() => toggleExplanation('q2')}
-                    className="flex items-center text-xs text-indigo-600 hover:text-indigo-800"
-                  >
-                    <HelpCircle size={14} className="mr-1" />
-                    {showExplanations['q2'] ? 'Hide' : 'Show'} explanation
-                  </button>
-                )}
-              </div>
-              
-              <div className="mt-2 space-y-2">
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q2" 
-                    className="mr-2"
-                    checked={userAnswers['q2'] === 0}
-                    onChange={() => handleAnswerSelect('q2', 0)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q2'] === 0 ? (isAnswerCorrect('q2') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very quiet
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q2" 
-                    className="mr-2"
-                    checked={userAnswers['q2'] === 1}
-                    onChange={() => handleAnswerSelect('q2', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q2'] === 1 ? (isAnswerCorrect('q2') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very tasty
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q2" 
-                    className="mr-2"
-                    checked={userAnswers['q2'] === 2}
-                    onChange={() => handleAnswerSelect('q2', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q2'] === 2 ? (isAnswerCorrect('q2') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very colorful
-                  </span>
-                </label>
-              </div>
-              
-              <AnimatePresence>
-                {showExplanations['q2'] && (
-                  <motion.div 
-                    className="mt-3 text-sm bg-indigo-50 p-3 rounded-lg"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                  >
-                    {getExplanation('q2')}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <div className="p-3 border rounded-lg">
-              <div className="flex justify-between items-center">
-                <p className="font-medium">Brave</p>
-                {exerciseComplete && (
-                  <button 
-                    onClick={() => toggleExplanation('q3')}
-                    className="flex items-center text-xs text-indigo-600 hover:text-indigo-800"
-                  >
-                    <HelpCircle size={14} className="mr-1" />
-                    {showExplanations['q3'] ? 'Hide' : 'Show'} explanation
-                  </button>
-                )}
-              </div>
-              
-              <div className="mt-2 space-y-2">
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q3" 
-                    className="mr-2"
-                    checked={userAnswers['q3'] === 0}
-                    onChange={() => handleAnswerSelect('q3', 0)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q3'] === 0 ? (isAnswerCorrect('q3') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very courageous
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q3" 
-                    className="mr-2"
-                    checked={userAnswers['q3'] === 1}
-                    onChange={() => handleAnswerSelect('q3', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q3'] === 1 ? (isAnswerCorrect('q3') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very strong
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q3" 
-                    className="mr-2"
-                    checked={userAnswers['q3'] === 2}
-                    onChange={() => handleAnswerSelect('q3', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q3'] === 2 ? (isAnswerCorrect('q3') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very smart
-                  </span>
-                </label>
-              </div>
-              
-              <AnimatePresence>
-                {showExplanations['q3'] && (
-                  <motion.div 
-                    className="mt-3 text-sm bg-indigo-50 p-3 rounded-lg"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                  >
-                    {getExplanation('q3')}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <div className="p-3 border rounded-lg">
-              <div className="flex justify-between items-center">
-                <p className="font-medium">Ancient</p>
-                {exerciseComplete && (
-                  <button 
-                    onClick={() => toggleExplanation('q4')}
-                    className="flex items-center text-xs text-indigo-600 hover:text-indigo-800"
-                  >
-                    <HelpCircle size={14} className="mr-1" />
-                    {showExplanations['q4'] ? 'Hide' : 'Show'} explanation
-                  </button>
-                )}
-              </div>
-              
-              <div className="mt-2 space-y-2">
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q4" 
-                    className="mr-2"
-                    checked={userAnswers['q4'] === 0}
-                    onChange={() => handleAnswerSelect('q4', 0)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q4'] === 0 ? (isAnswerCorrect('q4') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very new
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q4" 
-                    className="mr-2"
-                    checked={userAnswers['q4'] === 1}
-                    onChange={() => handleAnswerSelect('q4', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q4'] === 1 ? (isAnswerCorrect('q4') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very rare
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q4" 
-                    className="mr-2"
-                    checked={userAnswers['q4'] === 2}
-                    onChange={() => handleAnswerSelect('q4', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q4'] === 2 ? (isAnswerCorrect('q4') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very old
-                  </span>
-                </label>
-              </div>
-              
-              <AnimatePresence>
-                {showExplanations['q4'] && (
-                  <motion.div 
-                    className="mt-3 text-sm bg-indigo-50 p-3 rounded-lg"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                  >
-                    {getExplanation('q4')}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <div className="p-3 border rounded-lg">
-              <div className="flex justify-between items-center">
-                <p className="font-medium">Beautiful</p>
-                {exerciseComplete && (
-                  <button 
-                    onClick={() => toggleExplanation('q5')}
-                    className="flex items-center text-xs text-indigo-600 hover:text-indigo-800"
-                  >
-                    <HelpCircle size={14} className="mr-1" />
-                    {showExplanations['q5'] ? 'Hide' : 'Show'} explanation
-                  </button>
-                )}
-              </div>
-              
-              <div className="mt-2 space-y-2">
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q5" 
-                    className="mr-2"
-                    checked={userAnswers['q5'] === 0}
-                    onChange={() => handleAnswerSelect('q5', 0)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q5'] === 0 ? (isAnswerCorrect('q5') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very expensive
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q5" 
-                    className="mr-2"
-                    checked={userAnswers['q5'] === 1}
-                    onChange={() => handleAnswerSelect('q5', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q5'] === 1 ? (isAnswerCorrect('q5') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very attractive
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="q5" 
-                    className="mr-2"
-                    checked={userAnswers['q5'] === 2}
-                    onChange={() => handleAnswerSelect('q5', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['q5'] === 2 ? (isAnswerCorrect('q5') ? 'text-green-700' : 'text-red-700') : ''}>
-                    Very colorful
-                  </span>
-                </label>
-              </div>
-              
-              <AnimatePresence>
-                {showExplanations['q5'] && (
-                  <motion.div 
-                    className="mt-3 text-sm bg-indigo-50 p-3 rounded-lg"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                  >
-                    {getExplanation('q5')}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            ))}
           </div>
         </div>
       );
-    } else if (exercise.category === 'grammar') {
+    } else if (exercise?.category === 'grammar') {
       return (
         <div className="space-y-6">
           <p className="text-gray-700">Select the correct sentence in each group:</p>
@@ -609,45 +378,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <label className="flex items-center">
+                {getOptions('g1').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
                   <input 
                     type="radio" 
                     name="g1" 
                     className="mr-2"
-                    checked={userAnswers['g1'] === 0}
-                    onChange={() => handleAnswerSelect('g1', 0)}
+                        checked={userAnswers['g1'] === optionIndex}
+                        onChange={() => handleAnswerSelect('g1', optionIndex)}
                     disabled={exerciseComplete}
                   />
-                  <span className={exerciseComplete && userAnswers['g1'] === 0 ? (isAnswerCorrect('g1') ? 'text-green-700' : 'text-red-700') : ''}>
-                    I am go to school everyday.
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('g1')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['g1'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
                   </span>
                 </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g1" 
-                    className="mr-2"
-                    checked={userAnswers['g1'] === 1}
-                    onChange={() => handleAnswerSelect('g1', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g1'] === 1 ? (isAnswerCorrect('g1') ? 'text-green-700' : 'text-red-700') : ''}>
-                    I go to school everyday.
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g1" 
-                    className="mr-2"
-                    checked={userAnswers['g1'] === 2}
-                    onChange={() => handleAnswerSelect('g1', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g1'] === 2 ? (isAnswerCorrect('g1') ? 'text-green-700' : 'text-red-700') : ''}>
-                    I going to school everyday.
-                  </span>
-                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -679,45 +434,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <label className="flex items-center">
+                {getOptions('g2').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
                   <input 
                     type="radio" 
                     name="g2" 
                     className="mr-2"
-                    checked={userAnswers['g2'] === 0}
-                    onChange={() => handleAnswerSelect('g2', 0)}
+                        checked={userAnswers['g2'] === optionIndex}
+                        onChange={() => handleAnswerSelect('g2', optionIndex)}
                     disabled={exerciseComplete}
                   />
-                  <span className={exerciseComplete && userAnswers['g2'] === 0 ? (isAnswerCorrect('g2') ? 'text-green-700' : 'text-red-700') : ''}>
-                    She don't like apples.
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('g2')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['g2'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
                   </span>
                 </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g2" 
-                    className="mr-2"
-                    checked={userAnswers['g2'] === 1}
-                    onChange={() => handleAnswerSelect('g2', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g2'] === 1 ? (isAnswerCorrect('g2') ? 'text-green-700' : 'text-red-700') : ''}>
-                    She doesn't like apples.
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g2" 
-                    className="mr-2"
-                    checked={userAnswers['g2'] === 2}
-                    onChange={() => handleAnswerSelect('g2', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g2'] === 2 ? (isAnswerCorrect('g2') ? 'text-green-700' : 'text-red-700') : ''}>
-                    She not like apples.
-                  </span>
-                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -749,45 +490,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <label className="flex items-center">
+                {getOptions('g3').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
                   <input 
                     type="radio" 
                     name="g3" 
                     className="mr-2"
-                    checked={userAnswers['g3'] === 0}
-                    onChange={() => handleAnswerSelect('g3', 0)}
+                        checked={userAnswers['g3'] === optionIndex}
+                        onChange={() => handleAnswerSelect('g3', optionIndex)}
                     disabled={exerciseComplete}
                   />
-                  <span className={exerciseComplete && userAnswers['g3'] === 0 ? (isAnswerCorrect('g3') ? 'text-green-700' : 'text-red-700') : ''}>
-                    They play football.
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('g3')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['g3'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
                   </span>
                 </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g3" 
-                    className="mr-2"
-                    checked={userAnswers['g3'] === 1}
-                    onChange={() => handleAnswerSelect('g3', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g3'] === 1 ? (isAnswerCorrect('g3') ? 'text-green-700' : 'text-red-700') : ''}>
-                    They played football.
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g3" 
-                    className="mr-2"
-                    checked={userAnswers['g3'] === 2}
-                    onChange={() => handleAnswerSelect('g3', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g3'] === 2 ? (isAnswerCorrect('g3') ? 'text-green-700' : 'text-red-700') : ''}>
-                    They are playing football.
-                  </span>
-                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -819,45 +546,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <label className="flex items-center">
+                {getOptions('g4').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
                   <input 
                     type="radio" 
                     name="g4" 
                     className="mr-2"
-                    checked={userAnswers['g4'] === 0}
-                    onChange={() => handleAnswerSelect('g4', 0)}
+                        checked={userAnswers['g4'] === optionIndex}
+                        onChange={() => handleAnswerSelect('g4', optionIndex)}
                     disabled={exerciseComplete}
                   />
-                  <span className={exerciseComplete && userAnswers['g4'] === 0 ? (isAnswerCorrect('g4') ? 'text-green-700' : 'text-red-700') : ''}>
-                    He has finished his homework.
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('g4')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['g4'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
                   </span>
                 </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g4" 
-                    className="mr-2"
-                    checked={userAnswers['g4'] === 1}
-                    onChange={() => handleAnswerSelect('g4', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g4'] === 1 ? (isAnswerCorrect('g4') ? 'text-green-700' : 'text-red-700') : ''}>
-                    He have finished his homework.
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g4" 
-                    className="mr-2"
-                    checked={userAnswers['g4'] === 2}
-                    onChange={() => handleAnswerSelect('g4', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g4'] === 2 ? (isAnswerCorrect('g4') ? 'text-green-700' : 'text-red-700') : ''}>
-                    He is finish his homework.
-                  </span>
-                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -889,45 +602,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <label className="flex items-center">
+                {getOptions('g5').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
                   <input 
                     type="radio" 
                     name="g5" 
                     className="mr-2"
-                    checked={userAnswers['g5'] === 0}
-                    onChange={() => handleAnswerSelect('g5', 0)}
+                        checked={userAnswers['g5'] === optionIndex}
+                        onChange={() => handleAnswerSelect('g5', optionIndex)}
                     disabled={exerciseComplete}
                   />
-                  <span className={exerciseComplete && userAnswers['g5'] === 0 ? (isAnswerCorrect('g5') ? 'text-green-700' : 'text-red-700') : ''}>
-                    We was watching TV.
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('g5')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['g5'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
                   </span>
                 </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g5" 
-                    className="mr-2"
-                    checked={userAnswers['g5'] === 1}
-                    onChange={() => handleAnswerSelect('g5', 1)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g5'] === 1 ? (isAnswerCorrect('g5') ? 'text-green-700' : 'text-red-700') : ''}>
-                    We were watching TV.
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="radio" 
-                    name="g5" 
-                    className="mr-2"
-                    checked={userAnswers['g5'] === 2}
-                    onChange={() => handleAnswerSelect('g5', 2)}
-                    disabled={exerciseComplete}
-                  />
-                  <span className={exerciseComplete && userAnswers['g5'] === 2 ? (isAnswerCorrect('g5') ? 'text-green-700' : 'text-red-700') : ''}>
-                    We are watching TV.
-                  </span>
-                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -946,7 +645,7 @@ const Practice = () => {
           </div>
         </div>
       );
-    } else if (exercise.category === 'reading') {
+    } else if (exercise?.category === 'reading') {
       return (
         <div className="space-y-6">
           <div className="p-4 bg-gray-50 rounded-lg">
@@ -954,9 +653,9 @@ const Practice = () => {
               The invention of the printing press in the 15th century revolutionized the way information was shared. Before this invention, books were handwritten, making them expensive and rare. The printing press allowed for mass production of books, making them more accessible to the general public." What was the main impact of the printing press?
             </p>
           </div>
-
+          
           <p className="font-medium">Answer the following questions:</p>
-
+          
           <div className="space-y-4">
             <div className="p-3 border rounded-lg">
               <div className="flex justify-between items-center">
@@ -973,51 +672,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r1" 
-                      className="mr-2"
-                      checked={userAnswers['r1'] === 0}
-                      onChange={() => handleAnswerSelect('r1', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r1'] === 0 ? (isAnswerCorrect('r1') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Next Saturday
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r1" 
-                      className="mr-2"
-                      checked={userAnswers['r1'] === 1}
-                      onChange={() => handleAnswerSelect('r1', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r1'] === 1 ? (isAnswerCorrect('r1') ? 'text-green-700' : 'text-red-700') : ''}>
-                      This Friday
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r1" 
-                      className="mr-2"
-                      checked={userAnswers['r1'] === 2}
-                      onChange={() => handleAnswerSelect('r1', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r1'] === 2 ? (isAnswerCorrect('r1') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Tomorrow
-                    </span>
-                  </label>
-                </div>
+                {getOptions('r1').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="r1" 
+                    className="mr-2"
+                        checked={userAnswers['r1'] === optionIndex}
+                        onChange={() => handleAnswerSelect('r1', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('r1')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['r1'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1049,51 +728,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r2" 
-                      className="mr-2"
-                      checked={userAnswers['r2'] === 0}
-                      onChange={() => handleAnswerSelect('r2', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r2'] === 0 ? (isAnswerCorrect('r2') ? 'text-green-700' : 'text-red-700') : ''}>
-                      9 AM
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r2" 
-                      className="mr-2"
-                      checked={userAnswers['r2'] === 1}
-                      onChange={() => handleAnswerSelect('r2', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r2'] === 1 ? (isAnswerCorrect('r2') ? 'text-green-700' : 'text-red-700') : ''}>
-                      3 PM
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r2" 
-                      className="mr-2"
-                      checked={userAnswers['r2'] === 2}
-                      onChange={() => handleAnswerSelect('r2', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r2'] === 2 ? (isAnswerCorrect('r2') ? 'text-green-700' : 'text-red-700') : ''}>
-                      5 PM
-                    </span>
-                  </label>
-                </div>
+                {getOptions('r2').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="r2" 
+                    className="mr-2"
+                        checked={userAnswers['r2'] === optionIndex}
+                        onChange={() => handleAnswerSelect('r2', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('r2')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['r2'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1125,51 +784,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r3" 
-                      className="mr-2"
-                      checked={userAnswers['r3'] === 0}
-                      onChange={() => handleAnswerSelect('r3', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r3'] === 0 ? (isAnswerCorrect('r3') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Casual clothes
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r3" 
-                      className="mr-2"
-                      checked={userAnswers['r3'] === 1}
-                      onChange={() => handleAnswerSelect('r3', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r3'] === 1 ? (isAnswerCorrect('r3') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Formal clothes
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r3" 
-                      className="mr-2"
-                      checked={userAnswers['r3'] === 2}
-                      onChange={() => handleAnswerSelect('r3', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r3'] === 2 ? (isAnswerCorrect('r3') ? 'text-green-700' : 'text-red-700') : ''}>
-                      School uniform
-                    </span>
-                  </label>
-                </div>
+                {getOptions('r3').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="r3" 
+                    className="mr-2"
+                        checked={userAnswers['r3'] === optionIndex}
+                        onChange={() => handleAnswerSelect('r3', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('r3')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['r3'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1201,51 +840,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r4" 
-                      className="mr-2"
-                      checked={userAnswers['r4'] === 0}
-                      onChange={() => handleAnswerSelect('r4', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r4'] === 0 ? (isAnswerCorrect('r4') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Only games
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r4" 
-                      className="mr-2"
-                      checked={userAnswers['r4'] === 1}
-                      onChange={() => handleAnswerSelect('r4', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r4'] === 1 ? (isAnswerCorrect('r4') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Activities and food stalls
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r4" 
-                      className="mr-2"
-                      checked={userAnswers['r4'] === 2}
-                      onChange={() => handleAnswerSelect('r4', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r4'] === 2 ? (isAnswerCorrect('r4') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Only food stalls
-                    </span>
-                  </label>
-                </div>
+                {getOptions('r4').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="r4" 
+                    className="mr-2"
+                        checked={userAnswers['r4'] === optionIndex}
+                        onChange={() => handleAnswerSelect('r4', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('r4')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['r4'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1277,51 +896,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r5" 
-                      className="mr-2"
-                      checked={userAnswers['r5'] === 0}
-                      onChange={() => handleAnswerSelect('r5', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r5'] === 0 ? (isAnswerCorrect('r5') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Parents are welcome
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r5" 
-                      className="mr-2"
-                      checked={userAnswers['r5'] === 1}
-                      onChange={() => handleAnswerSelect('r5', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r5'] === 1 ? (isAnswerCorrect('r5') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Only students
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="r5" 
-                      className="mr-2"
-                      checked={userAnswers['r5'] === 2}
-                      onChange={() => handleAnswerSelect('r5', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['r5'] === 2 ? (isAnswerCorrect('r5') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Only teachers
-                    </span>
-                  </label>
-                </div>
+                {getOptions('r5').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="r5" 
+                    className="mr-2"
+                        checked={userAnswers['r5'] === optionIndex}
+                        onChange={() => handleAnswerSelect('r5', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('r5')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['r5'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1369,51 +968,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l1" 
-                      className="mr-2"
-                      checked={userAnswers['l1'] === 0}
-                      onChange={() => handleAnswerSelect('l1', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l1'] === 0 ? (isAnswerCorrect('l1') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Sarah
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l1" 
-                      className="mr-2"
-                      checked={userAnswers['l1'] === 1}
-                      onChange={() => handleAnswerSelect('l1', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l1'] === 1 ? (isAnswerCorrect('l1') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Sandra
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l1" 
-                      className="mr-2"
-                      checked={userAnswers['l1'] === 2}
-                      onChange={() => handleAnswerSelect('l1', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l1'] === 2 ? (isAnswerCorrect('l1') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Samantha
-                    </span>
-                  </label>
-                </div>
+                {getOptions('l1').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="l1" 
+                    className="mr-2"
+                        checked={userAnswers['l1'] === optionIndex}
+                        onChange={() => handleAnswerSelect('l1', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('l1')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['l1'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1445,51 +1024,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l2" 
-                      className="mr-2"
-                      checked={userAnswers['l2'] === 0}
-                      onChange={() => handleAnswerSelect('l2', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l2'] === 0 ? (isAnswerCorrect('l2') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Doctor
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l2" 
-                      className="mr-2"
-                      checked={userAnswers['l2'] === 1}
-                      onChange={() => handleAnswerSelect('l2', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l2'] === 1 ? (isAnswerCorrect('l2') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Teacher
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l2" 
-                      className="mr-2"
-                      checked={userAnswers['l2'] === 2}
-                      onChange={() => handleAnswerSelect('l2', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l2'] === 2 ? (isAnswerCorrect('l2') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Engineer
-                    </span>
-                  </label>
-                </div>
+                {getOptions('l2').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="l2" 
+                    className="mr-2"
+                        checked={userAnswers['l2'] === optionIndex}
+                        onChange={() => handleAnswerSelect('l2', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('l2')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['l2'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1521,51 +1080,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l3" 
-                      className="mr-2"
-                      checked={userAnswers['l3'] === 0}
-                      onChange={() => handleAnswerSelect('l3', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l3'] === 0 ? (isAnswerCorrect('l3') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Chiang Mai University
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l3" 
-                      className="mr-2"
-                      checked={userAnswers['l3'] === 1}
-                      onChange={() => handleAnswerSelect('l3', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l3'] === 1 ? (isAnswerCorrect('l3') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Thammasat University
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l3" 
-                      className="mr-2"
-                      checked={userAnswers['l3'] === 2}
-                      onChange={() => handleAnswerSelect('l3', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l3'] === 2 ? (isAnswerCorrect('l3') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Bangkok University
-                    </span>
-                  </label>
-                </div>
+                {getOptions('l3').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="l3" 
+                    className="mr-2"
+                        checked={userAnswers['l3'] === optionIndex}
+                        onChange={() => handleAnswerSelect('l3', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('l3')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['l3'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1597,51 +1136,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l4" 
-                      className="mr-2"
-                      checked={userAnswers['l4'] === 0}
-                      onChange={() => handleAnswerSelect('l4', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l4'] === 0 ? (isAnswerCorrect('l4') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Education
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l4" 
-                      className="mr-2"
-                      checked={userAnswers['l4'] === 1}
-                      onChange={() => handleAnswerSelect('l4', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l4'] === 1 ? (isAnswerCorrect('l4') ? 'text-green-700' : 'text-red-700') : ''}>
-                      English literature
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l4" 
-                      className="mr-2"
-                      checked={userAnswers['l4'] === 2}
-                      onChange={() => handleAnswerSelect('l4', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l4'] === 2 ? (isAnswerCorrect('l4') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Business
-                    </span>
-                  </label>
-                </div>
+                {getOptions('l4').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="l4" 
+                    className="mr-2"
+                        checked={userAnswers['l4'] === optionIndex}
+                        onChange={() => handleAnswerSelect('l4', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('l4')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['l4'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>
@@ -1673,51 +1192,31 @@ const Practice = () => {
               </div>
               
               <div className="mt-2 space-y-2">
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l5" 
-                      className="mr-2"
-                      checked={userAnswers['l5'] === 0}
-                      onChange={() => handleAnswerSelect('l5', 0)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l5'] === 0 ? (isAnswerCorrect('l5') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Student
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l5" 
-                      className="mr-2"
-                      checked={userAnswers['l5'] === 1}
-                      onChange={() => handleAnswerSelect('l5', 1)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l5'] === 1 ? (isAnswerCorrect('l5') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Teacher
-                    </span>
-                  </label>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <label className="flex items-center">
-                    <input 
-                      type="radio" 
-                      name="l5" 
-                      className="mr-2"
-                      checked={userAnswers['l5'] === 2}
-                      onChange={() => handleAnswerSelect('l5', 2)}
-                      disabled={exerciseComplete}
-                    />
-                    <span className={exerciseComplete && userAnswers['l5'] === 2 ? (isAnswerCorrect('l5') ? 'text-green-700' : 'text-red-700') : ''}>
-                      Professor
-                    </span>
-                  </label>
-                </div>
+                {getOptions('l5').map((option: string, optionIndex: number) => (
+                  <div key={optionIndex} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <label className="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="l5" 
+                    className="mr-2"
+                        checked={userAnswers['l5'] === optionIndex}
+                        onChange={() => handleAnswerSelect('l5', optionIndex)}
+                    disabled={exerciseComplete}
+                  />
+                      <span className={`flex-1 ${
+                        exerciseComplete ? (
+                          optionIndex === getCorrectAnswer('l5')
+                            ? 'text-green-700 font-medium'
+                            : userAnswers['l5'] === optionIndex
+                              ? 'text-red-700'
+                              : ''
+                        ) : ''
+                      }`}>
+                        {option}
+                  </span>
+                </label>
+                  </div>
+                ))}
               </div>
               
               <AnimatePresence>

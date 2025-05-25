@@ -1,6 +1,6 @@
 import  { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { Bell, Book, User, X, LogOut } from 'lucide-react';
+import { Bell, Book, User, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useUser } from '../context/UserContext';
 
@@ -106,10 +106,10 @@ const Header = ({ children }: HeaderProps) => {
             className="flex items-center space-x-2 focus:outline-none"
           >
             <div className="h-8 w-8 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-600 font-medium">
-              {user?.name?.[0] || 'U'}
+              {user?.username?.[0] || 'U'}
             </div>
             <span className="hidden md:block text-sm font-medium text-gray-700">
-              {user?.name || 'User'}
+              {user?.username || 'User'}
             </span>
           </button>
           

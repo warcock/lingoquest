@@ -7,7 +7,7 @@ import { useUser } from '../context/UserContext';
 
 const Friends = () => {
   const { user } = useUser();
-  const { friends, friendRequests, addFriend, acceptFriendRequest, rejectFriendRequest, removeFriend } = useFriends();
+  const { friends, friendRequests, addFriend, acceptFriendRequest, rejectFriendRequest, removeFriend, sentFriendRequests, cancelFriendRequest } = useFriends();
   
   const [searchQuery, setSearchQuery] = useState('');
   const [showAddFriend, setShowAddFriend] = useState(false);
@@ -19,7 +19,7 @@ const Friends = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
   
   const filteredFriends = friends.filter(friend => 
-    friend.name.toLowerCase().includes(searchQuery.toLowerCase())
+    friend.username.toLowerCase().includes(searchQuery.toLowerCase())
   );
   
   const handleAddFriend = async (e: React.FormEvent) => {
@@ -99,10 +99,10 @@ const Friends = () => {
                   >
                     <div className="flex items-center space-x-3">
                       <div className="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
-                        {request.name.charAt(0)}
+                        {request.username.charAt(0)}
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-900">{request.name}</h4>
+                        <h4 className="font-medium text-gray-900">{request.username}</h4>
                       </div>
                     </div>
                     
@@ -122,6 +122,56 @@ const Friends = () => {
                         whileTap={{ scale: 0.95 }}
                       >
                         Accept
+                      </motion.button>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        {/* Sent Friend Requests */}
+        <AnimatePresence>
+          {sentFriendRequests.length > 0 && (
+            <motion.div 
+              className="card"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-lg font-semibold mb-4 flex items-center">
+                <Users size={18} className="mr-2 text-indigo-600" />
+                Sent Friend Requests ({sentFriendRequests.length})
+              </h3>
+              
+              <div className="space-y-3">
+                {sentFriendRequests.map(request => (
+                  <motion.div 
+                    key={request.id} 
+                    className="flex justify-between items-center p-3 rounded-lg border border-gray-200"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0, height: 0 }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                        {request.username.charAt(0)}
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-900">{request.username}</h4>
+                      </div>
+                    </div>
+                    
+                    <div className="flex space-x-2">
+                      {/* Cancel Request Button */}
+                      <motion.button 
+                        onClick={() => cancelFriendRequest(request.id)}
+                        className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <X size={18} />
                       </motion.button>
                     </div>
                   </motion.div>
@@ -163,10 +213,10 @@ const Friends = () => {
                   >
                     <div className="flex items-center space-x-3">
                       <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-medium">
-                        {friend.name.charAt(0)}
+                        {friend.username.charAt(0)}
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-900">{friend.name}</h4>
+                        <h4 className="font-medium text-gray-900">{friend.username}</h4>
                         <div className="flex items-center text-sm text-gray-600 mt-1">
                           <Award className="h-4 w-4 mr-1 text-indigo-600" />
                           Level: {friend.level}
