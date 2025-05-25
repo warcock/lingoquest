@@ -2,6 +2,9 @@ import  { createContext, useContext, useState, useEffect, ReactNode } from 'reac
 import { Friend, SentFriendRequest } from '../types';
 import { useUser } from './UserContext';
 
+// Define backend URL from environment variable or use localhost for dev
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 interface FriendRequest {
   id: string;
   username: string;
@@ -33,7 +36,7 @@ const FriendsContext = createContext<FriendsContextType>({
 // Add fetch sent friend requests function outside useEffect
 const fetchSentRequests = async (userToken: string, setSentFriendRequests: (requests: SentFriendRequest[]) => void) => {
   try {
-    const response = await fetch('/api/friends/requests/sent', {
+    const response = await fetch(`${BACKEND_URL}/api/friends/requests/sent`, {
       headers: {
         'Authorization': `Bearer ${userToken}`,
       },
@@ -69,7 +72,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
       // Fetch friends
       const fetchFriends = async () => {
         try {
-          const response = await fetch('/api/friends', {
+          const response = await fetch(`${BACKEND_URL}/api/friends`, {
             headers: {
               'Authorization': `Bearer ${user.token}`,
             },
@@ -97,7 +100,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
       // Fetch received friend requests
       const fetchReceivedRequests = async () => {
         try {
-          const response = await fetch('/api/friends/requests/received', {
+          const response = await fetch(`${BACKEND_URL}/api/friends/requests/received`, {
             headers: {
               'Authorization': `Bearer ${user.token}`,
             },
@@ -169,7 +172,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       // 1. Search for the user by email
-      const searchResponse = await fetch(`/api/friends/search?query=${encodeURIComponent(email)}`, {
+      const searchResponse = await fetch(`${BACKEND_URL}/api/friends/search?query=${encodeURIComponent(email)}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
         },
@@ -194,7 +197,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
       // For now, we'll rely on the backend checks
 
       // 2. Send the friend request using the recipient's ID
-      const sendRequestResponse = await fetch(`/api/friends/request/send/${recipientId}`, {
+      const sendRequestResponse = await fetch(`${BACKEND_URL}/api/friends/request/send/${recipientId}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${user.token}`,
@@ -226,7 +229,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
     if (!user || !user.token) return;
 
     try {
-      const response = await fetch(`/api/friends/request/accept/${id}`, {
+      const response = await fetch(`${BACKEND_URL}/api/friends/request/accept/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${user.token}`,
@@ -266,7 +269,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
      if (!user || !user.token) return;
 
      try {
-       const response = await fetch(`/api/friends/request/reject/${id}`, {
+       const response = await fetch(`${BACKEND_URL}/api/friends/request/reject/${id}`, {
          method: 'PUT',
          headers: {
            'Authorization': `Bearer ${user.token}`,
@@ -293,7 +296,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
     if (!user || !user.token) return;
 
     try {
-      const response = await fetch(`/api/friends/${id}`, {
+      const response = await fetch(`${BACKEND_URL}/api/friends/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`,
@@ -321,7 +324,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
     if (!user || !user.token) return;
 
     try {
-      const response = await fetch(`/api/friends/request/cancel/${id}`, {
+      const response = await fetch(`${BACKEND_URL}/api/friends/request/cancel/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`,
@@ -347,7 +350,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
   // Helper functions for fetching data (moved outside useEffect for reusability)
   const fetchFriends = async (userToken: string, setFriends: (friends: Friend[]) => void) => {
     try {
-      const response = await fetch('/api/friends', {
+      const response = await fetch(`${BACKEND_URL}/api/friends`, {
         headers: {
           'Authorization': `Bearer ${userToken}`,
         },
@@ -373,7 +376,7 @@ export const FriendsProvider = ({ children }: { children: ReactNode }) => {
 
   const fetchReceivedRequests = async (userToken: string, setFriendRequests: (requests: FriendRequest[]) => void) => {
     try {
-      const response = await fetch('/api/friends/requests/received', {
+      const response = await fetch(`${BACKEND_URL}/api/friends/requests/received`, {
         headers: {
           'Authorization': `Bearer ${userToken}`,
         },
