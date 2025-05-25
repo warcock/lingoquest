@@ -34,11 +34,11 @@ app.use('/api/friends', require('./routes/friendRoutes'));
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
     // Assumes your frontend build output is in a 'dist' folder in the root of the project
-    app.use(express.static(path.join(__dirname, '..', 'dist')));
+    app.use(express.static(path.join(process.cwd(), 'dist')));
 
     // Serve index.html for all other routes
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '..', 'dist', 'index.html'));
+        res.sendFile(path.resolve(process.cwd(), 'dist', 'index.html'));
     });
 }
 
