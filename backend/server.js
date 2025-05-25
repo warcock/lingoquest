@@ -25,11 +25,6 @@ app.use('/api/friends', (req, res, next) => {
   next(); // Continue to the next middleware/route handler
 });
 
-// Basic route
-app.get('/', (req, res) => {
-    res.send('API is running...');
-});
-
 // Routes
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/friends', require('./routes/friendRoutes'));
