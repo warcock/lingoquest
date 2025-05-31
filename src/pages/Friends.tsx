@@ -4,10 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useFriends } from '../context/FriendsContext';
 import PageTransition from '../components/animations/PageTransition';
 import { useUser } from '../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const Friends = () => {
   const { user } = useUser();
   const { friends, friendRequests, addFriend, acceptFriendRequest, rejectFriendRequest, removeFriend, sentFriendRequests, cancelFriendRequest } = useFriends();
+  const navigate = useNavigate();
   
   const [searchQuery, setSearchQuery] = useState('');
   const [showAddFriend, setShowAddFriend] = useState(false);
@@ -48,6 +50,21 @@ const Friends = () => {
       }, 2000);
     } else {
       setAddFriendError(result.message);
+    }
+  };
+
+  const handleStartChat = async (friendId: string) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/chat/${friendId}`, {
+        headers: {
+          'Authorization': `Bearer ${user?.token}`
+        }
+      });
+      if (response.ok) {
+        navigate('/chat');
+      }
+    } catch (error) {
+      console.error('Error starting chat:', error);
     }
   };
 
@@ -226,9 +243,10 @@ const Friends = () => {
                     
                     <div className="flex items-center space-x-2">
                       <motion.button 
-                        className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"
+                        className="p-2 text-primary hover:bg-primary/10 rounded-full"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
+                        onClick={() => handleStartChat(friend.id)}
                       >
                         <MessageSquare size={18} />
                       </motion.button>

@@ -2,10 +2,15 @@ services:
   - type: web
     name: lingoquest
     env: node
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    buildCommand: |
+      npm install
+      cd backend && npm install
+      npm run build
+    startCommand: cd backend && node server.js
     envVars:
       - key: NODE_ENV
         value: production
-    healthCheckPath: /
+      - key: PORT
+        value: 10000
+    healthCheckPath: /api/users
     autoDeploy: true 

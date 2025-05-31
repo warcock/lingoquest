@@ -1,10 +1,8 @@
-import  { useState, useEffect } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import { ProgressProvider } from './context/ProgressContext';
 import { FriendsProvider } from './context/FriendsContext';
-import Layout from './components/Layout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -13,22 +11,12 @@ import Quizzes from './pages/Quizzes';
 import Friends from './pages/Friends';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
+import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
-import connectToMongoDB from './services/mongodb';
+import Chat from './pages/Chat';
 
 function App() {
   const location = useLocation();
-  const [, setDbStatus] = useState({ connected: false, message: 'Connecting...' });
-
-  useEffect(() => {
-    const initializeApp = async () => {
-      // Connect to MongoDB
-      const status = await connectToMongoDB();
-      setDbStatus(status);
-    };
-
-    initializeApp();
-  }, []);
 
   return (
     <UserProvider>
@@ -44,6 +32,7 @@ function App() {
                 <Route path="practice" element={<Practice />} />
                 <Route path="quizzes" element={<Quizzes />} />
                 <Route path="friends" element={<Friends />} />
+                <Route path="chat" element={<Chat />} />
                 <Route path="settings" element={<Settings />} />
               </Route>
               <Route path="*" element={<NotFound />} />

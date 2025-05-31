@@ -1,4 +1,4 @@
-import  { SkillProgress, Exercise, Friend, Quiz } from '../types';
+import  { SkillProgress, Exercise, Quiz } from '../types';
 
 export const mockSkillProgress: SkillProgress[] = [
   { category: 'Vocabulary', level: 75, totalExercises: 20, completedExercises: 15 },
@@ -17,13 +17,6 @@ export const mockExercises: Exercise[] = [
   { id: '7', title: 'Reading Comprehension: Science', category: 'reading', difficulty: 'intermediate', completed: false },
   { id: '8', title: 'Listening: Basic Conversations', category: 'listening', difficulty: 'beginner', completed: false },
   { id: '9', title: 'Listening: Academic Lectures', category: 'listening', difficulty: 'advanced', completed: false },
-];
-
-export const mockFriends: Friend[] = [
-  { id: '1', name: 'Somchai K.', level: 75 },
-  { id: '2', name: 'Nisa P.', level: 82 },
-  { id: '3', name: 'Apirak T.', level: 67 },
-  { id: '4', name: 'Supattra C.', level: 90 },
 ];
 
 export const mockQuizzes: Quiz[] = [
@@ -55,7 +48,9 @@ export const mockQuizzes: Quiz[] = [
         correctAnswer: 2
       }
     ],
-    completed: false
+    completed: false,
+    difficulty: '',
+    userAnswers: []
   },
   {
     id: '2',
@@ -74,7 +69,9 @@ export const mockQuizzes: Quiz[] = [
         correctAnswer: 0
       }
     ],
-    completed: true
+    completed: true,
+    difficulty: '',
+    userAnswers: []
   },
   {
     id: '3',
@@ -93,7 +90,9 @@ export const mockQuizzes: Quiz[] = [
         correctAnswer: 1
       }
     ],
-    completed: false
+    completed: false,
+    difficulty: '',
+    userAnswers: []
   }
 ];
  
